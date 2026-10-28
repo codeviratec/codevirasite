@@ -62,7 +62,7 @@ export default async function ServicePage({ params }: Props) {
       />
 
       <PageHero eyebrow={s.shortTitle} title={s.title} description={s.tagline} crumbs={crumbs}>
-        <div className="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="animate-fade-up mt-9 flex [animation-delay:120ms] flex-col items-center justify-center gap-3 sm:flex-row">
           <Link href="/contact" className="btn-primary">
             Get a Free Quote <ArrowRight className="h-4 w-4" />
           </Link>

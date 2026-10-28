@@ -96,17 +96,17 @@ export default function HomePage() {
 
         <div className="container-x grid items-center gap-12 sm:gap-16 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="text-center lg:text-left">
-            <span className="eyebrow reveal">
+            <span className="eyebrow animate-fade-up">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" /> Software & Digital Growth Agency
             </span>
-            <h1 className="reveal mt-6 text-4xl leading-[1.08] font-extrabold text-fg sm:text-5xl lg:text-6xl xl:text-[4.1rem]">
+            <h1 className="animate-fade-up [animation-delay:60ms] mt-6 text-4xl leading-[1.08] font-extrabold text-fg sm:text-5xl lg:text-6xl xl:text-[4.1rem]">
               We Build Apps, Games & Websites That <span className="text-gradient">Grow Your Business</span>
             </h1>
-            <p className="reveal mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
+            <p className="animate-fade-up [animation-delay:120ms] mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
               CodeVira designs, develops and markets digital products for ambitious brands — from mobile apps and games to
               SEO, Amazon growth and AI automation. One team, end-to-end, built for results.
             </p>
-            <div className="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="animate-fade-up [animation-delay:180ms] mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
               <Link href="/contact" className="btn-primary w-full sm:w-auto">
                 Get a Free Consultation <ArrowRight className="h-4 w-4" />
               </Link>
@@ -114,7 +114,7 @@ export default function HomePage() {
                 Explore Services
               </Link>
             </div>
-            <ul className="reveal mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted lg:justify-start">
+            <ul className="animate-fade-up [animation-delay:240ms] mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted lg:justify-start">
               {["Free project consultation", "Transparent pricing", "Reply within 24 hours"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-cyan" /> {t}
@@ -124,7 +124,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero visual */}
-          <div className="reveal relative mx-auto aspect-square w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[460px]" aria-hidden>
+          <div className="animate-fade-up [animation-delay:150ms] relative mx-auto aspect-square w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[460px]" aria-hidden>
             <div className="absolute inset-[6%] rounded-full border border-dashed border-violet/25" />
             <div className="absolute inset-[20%] rounded-full border border-line" />
             <div className="absolute inset-0 animate-spin-slow">

@@ -43,8 +43,13 @@
   --animate-float: float 7s ease-in-out infinite;
   --animate-spin-slow: spin 18s linear infinite;
   --animate-marquee: marquee 40s linear infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
@@ -84,7 +89,7 @@ h1, h2, h3, h4 {
   @apply bg-gradient-to-r from-violet via-[#4f46e5] to-[#0891b2] bg-clip-text text-transparent dark:from-violet-light dark:via-[#818cf8] dark:to-cyan;
 }
 @utility glass {
-  @apply border border-line bg-surface backdrop-blur-xl;
+  @apply border border-line bg-surface md:backdrop-blur-xl;
 }
 @utility card {
   @apply glass rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset] transition duration-300;

@@ -10,6 +10,7 @@ export function SectionHeading({
   description,
   align = "center",
   as: Tag = "h2",
+  intro = false,
 }: {
   eyebrow?: string;
   title: string;
@@ -17,9 +18,11 @@ export function SectionHeading({
   description?: string;
   align?: "center" | "left";
   as?: "h1" | "h2";
+  /** Above-the-fold heading: animate in with CSS instead of waiting for the scroll observer. */
+  intro?: boolean;
 }) {
   return (
-    <div className={`reveal max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
+    <div className={`${intro ? "animate-fade-up" : "reveal"} max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <Tag className="mt-4 text-[1.75rem] leading-tight font-extrabold text-fg sm:text-4xl lg:text-[2.75rem]">
         {title} {highlight && <span className="text-gradient">{highlight}</span>}
@@ -72,7 +75,7 @@ export function PageHero({
             ))}
           </ol>
         </nav>
-        <SectionHeading as="h1" eyebrow={eyebrow} title={title} highlight={highlight} description={description} />
+        <SectionHeading as="h1" intro eyebrow={eyebrow} title={title} highlight={highlight} description={description} />
         {children}
       </div>
     </section>
