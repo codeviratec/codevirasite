@@ -107,9 +107,6 @@ export default function HomePage() {
               SEO, Amazon growth and AI automation. One team, end-to-end, built for results.
             </p>
             <div className="animate-fade-up [animation-delay:180ms] mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto">
-                Get a Free Consultation <ArrowRight className="h-4 w-4" />
-              </Link>
               <Link href="/services" className="btn-ghost w-full sm:w-auto">
                 Explore Services
               </Link>
