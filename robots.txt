@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://codevira.uk
+Sitemap: https://codevira.uk/sitemap.xml
