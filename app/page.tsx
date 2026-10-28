@@ -186,7 +186,7 @@ export default function HomePage() {
         />
         <div className="mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <Link key={s.slug} href={`/services/${s.slug}`} className="card card-hover reveal p-6 sm:p-7">
+            <Link key={s.slug} href={`/services/${s.slug}`} className="card card-hover reveal group relative overflow-hidden p-6 sm:p-7">
               <div aria-hidden className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br from-violet/20 to-cyan/20 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet to-cyan text-white shadow-lg shadow-violet/25">
                 <s.icon className="h-6 w-6" />

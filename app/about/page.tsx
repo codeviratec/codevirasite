@@ -152,7 +152,7 @@ export default function AboutPage() {
         />
         <div className="mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((v) => (
-            <div key={v.title} className="card card-hover reveal p-6 sm:p-7">
+            <div key={v.title} className="card card-hover reveal p-6 sm:p-7">
               <v.icon className="h-7 w-7 text-violet dark:text-cyan-light" />
               <h3 className="mt-4 text-lg font-bold text-fg">{v.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{v.desc}</p>

@@ -108,7 +108,7 @@ export default async function ServicePage({ params }: Props) {
         />
         <div className="mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {s.offerings.map((o, i) => (
-            <div key={o.title} className="card card-hover reveal p-6 sm:p-7">
+            <div key={o.title} className="card card-hover reveal p-6 sm:p-7">
               <span className="font-display text-sm font-bold text-gradient">0{i + 1}</span>
               <h3 className="mt-3 text-lg font-bold text-fg">{o.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{o.desc}</p>
