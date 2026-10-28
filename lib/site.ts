@@ -23,6 +23,9 @@ export const site = {
   },
   geo: { lat: 30.6778, lng: 71.7444 },
   hours: "Mon–Sat, 9:00 AM – 7:00 PM (PKT)",
+  // Web3Forms access key for the contact form. It is a public key by design (it is sent from
+  // the browser and only lets the form deliver mail to our inbox), so it is safe to commit.
+  web3formsKey: "825a3c99-0c77-400b-a3e9-42262acfdbb6",
   keywords: [
     "CodeVira",
     "software house in Pakistan",

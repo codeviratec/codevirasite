@@ -20,7 +20,7 @@ export function ContactForm() {
     const data = new FormData(form);
     if (data.get("botcheck")) return;
 
-    const key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    const key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || site.web3formsKey;
     if (!key) {
       setStatus("error");
       setMessage(`The form is not configured yet. Please email us at ${site.email} or message us on WhatsApp.`);

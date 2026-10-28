@@ -20,7 +20,7 @@ npm run build      # static build in the out/ folder
 ## Configuration
 - **Company info** (name, phone, email, address, domain): `lib/site.ts`
 - **Services content**: `lib/services.ts`
-- **Contact form**: get a free access key at https://web3forms.com, copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_KEY`, then redeploy.
+- **Contact form**: submissions go through Web3Forms. The access key is stored in `lib/site.ts` (`web3formsKey`); change it there and redeploy to use a different key.
 - **Logo files**: `public/logo.svg`, `public/logo-mark.svg`, favicon `app/icon.svg`
 
 ## Deploy to GitHub Pages
