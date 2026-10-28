@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f8fc;
+  --bg-soft: #eef0f9;
+  --surface: rgba(255, 255, 255, 0.75);
+  --surface-solid: #ffffff;
+  --fg: #0b1026;
+  --muted: #4b5470;
+  --border: rgba(15, 23, 42, 0.09);
+  --glow: rgba(124, 58, 237, 0.16);
+  --grid: rgba(15, 23, 42, 0.05);
+}
+
+.dark {
+  --bg: #050816;
+  --bg-soft: #0a0f24;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-solid: #0c1229;
+  --fg: #eef1fb;
+  --muted: #9aa3bf;
+  --border: rgba(255, 255, 255, 0.08);
+  --glow: rgba(124, 58, 237, 0.35);
+  --grid: rgba(255, 255, 255, 0.045);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-solid: var(--surface-solid);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-violet: #7c3aed;
+  --color-violet-light: #a78bfa;
+  --color-cyan: #06b6d4;
+  --color-cyan-light: #67e8f9;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility text-gradient {
+  @apply bg-gradient-to-r from-violet via-[#4f46e5] to-[#0891b2] bg-clip-text text-transparent dark:from-violet-light dark:via-[#818cf8] dark:to-cyan;
+}
+@utility glass {
+  @apply border border-line bg-surface backdrop-blur-xl;
+}
+@utility card {
+  @apply glass rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset] transition duration-300;
+}
+@utility card-hover {
+  @apply hover:-translate-y-1 hover:border-violet/40 hover:shadow-[0_20px_60px_-20px_var(--glow)];
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet;
+}
+@utility btn-primary {
+  @apply btn bg-gradient-to-r from-violet to-cyan text-white shadow-[0_10px_30px_-10px_rgba(124,58,237,0.7)] hover:shadow-[0_14px_40px_-10px_rgba(6,182,212,0.7)] hover:brightness-110;
+}
+@utility btn-ghost {
+  @apply btn glass text-fg hover:border-violet/50;
+}
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full border border-violet/30 bg-violet/10 px-3 py-1 text-[10.5px] font-semibold tracking-wide whitespace-nowrap text-violet uppercase sm:text-xs dark:text-violet-light;
+}
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@layer components {
+  .prose-legal h2 {
+    @apply mt-10 mb-3 text-xl font-bold text-fg sm:text-2xl;
+  }
+  .prose-legal h3 {
+    @apply mt-6 mb-2 text-lg font-semibold text-fg;
+  }
+  .prose-legal p, .prose-legal li {
+    @apply leading-relaxed text-muted;
+  }
+  .prose-legal p { @apply mb-4; }
+  .prose-legal ul {
+    @apply mb-4 list-disc space-y-2 pl-6;
+  }
+  .prose-legal a {
+    @apply font-medium text-violet underline-offset-4 hover:underline dark:text-violet-light;
+  }
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+}
